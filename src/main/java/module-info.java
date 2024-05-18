@@ -4,5 +4,5 @@ module com.example.ds_gr16 {
 
 
     opens com.example.ds_gr16 to javafx.fxml;
-    exports com.example.ds_gr16;
+//    exports com.example.ds_gr16;
 }
