@@ -2,8 +2,19 @@ package service.User;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import model.Admin;
 import model.SupervisorTableModel;
+//import model.dto.Admin.AdminProfileToControllerDto;
+//import model.dto.Admin.ChangePasswordOnDb;
+//import model.dto.Overall.ChangePasswordDto;
+import model.dto.User.*;
+import repository.AdminRepository;
 import repository.UserRepository;
+import service.CustomExceptions.InvalidPassword;
+import service.PasswordHasher;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class UserService {
 //    public static boolean signUp(SupervisorCreateInterfaceDto supervisorData) {

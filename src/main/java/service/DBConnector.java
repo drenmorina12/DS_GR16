@@ -8,7 +8,7 @@ public class DBConnector{
 
 
     //Jonit
-    private static String url = "jdbc:mysql://localhost:3306/ds_gr16q";
+    private static String url = "jdbc:mysql://localhost:3306/ds_gr16";
     private static String user = "root";
     private static String password = "";
     private static Connection connection = null;

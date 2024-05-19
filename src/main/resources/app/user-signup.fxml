@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>-->
+
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -47,7 +48,7 @@
             </Button>
             <TextField layoutX="113.0" layoutY="304.0" promptText="Password" style="-fx-background-color: traparent; -fx-border-color: #6495ED; -fx-border-width: 0px 0px 2px 0px;" />
             <TextField layoutX="115.0" layoutY="191.0" prefWidth="160.0" promptText="Surname" style="-fx-background-color: traparent; -fx-border-color: #6495ED; -fx-border-width: 0px 0px 2px 0px;" />
-            <TextField layoutX="116.0" layoutY="237.0" promptText="User Name" style="-fx-background-color: traparent; -fx-border-color: #6495ED; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField layoutX="116.0" layoutY="237.0" promptText="Email" style="-fx-background-color: traparent; -fx-border-color: #6495ED; -fx-border-width: 0px 0px 2px 0px;" />
          </children>
       </AnchorPane>
    </right>

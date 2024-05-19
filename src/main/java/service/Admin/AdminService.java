@@ -1,10 +1,22 @@
 package service.Admin;
 
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import model.Admin;
+//import model.dto.Admin.*;
+
+//import model.dto.Overall.ChangePasswordDto;
+//import model.dto.Admin.ResetPasswordOnDb;
+//import model.filter.NjoftimPagination;
 import repository.AdminRepository;
+import repository.UserRepository;
+import service.CustomExceptions.InvalidPassword;
+import service.PasswordHasher;
+import controller.SESSION;
 //import repository.StudentRepository;
 
+import java.util.ArrayList;
 
 public class AdminService {
 //    public static boolean login(LoginAdminDto loginData){
