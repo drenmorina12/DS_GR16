@@ -1,6 +1,8 @@
 package repository;
 
 import model.Admin;
+import model.dto.Admin.EditAdminProfileDto;
+import model.dto.Admin.ChangePasswordOnDb;
 import service.DBConnector;
 
 import java.sql.Connection;
@@ -39,6 +41,45 @@ public class AdminRepository {
             return new Admin(id,firstName,lastName,email,salt,PasswodHash);
         }catch(Exception e){
             return null;
+        }
+    }
+
+    public static boolean savePersonalDetails(EditAdminProfileDto data) {
+        String query = "UPDATE tblAdmin SET Emri = ?, Mbiemri = ?, Email = ? WHERE email = ?";
+
+        Connection connection = DBConnector.getConnection();
+        try {
+            PreparedStatement pst = connection.prepareStatement(query);
+            pst.setString(1, data.getFirstname());
+            pst.setString(2, data.getLastName());
+            pst.setString(3, data.getEmail());
+            pst.setString(4, data.getOldEmail());
+            int rowsAffected = pst.executeUpdate();
+
+            pst.close();
+
+            return rowsAffected > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public static boolean changePassword(ChangePasswordOnDb changeData){
+        String query = "UPDATE tblAdmin SET passwordHash = ? WHERE email = ?";
+
+        Connection connection = DBConnector.getConnection();
+        try {
+            PreparedStatement pst = connection.prepareStatement(query);
+            pst.setString(1, changeData.getNewPassword());
+            pst.setString(2, changeData.getEmail());
+
+            int rowsAffected = pst.executeUpdate();
+            pst.close();
+            return rowsAffected > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
         }
     }
 }

@@ -8,6 +8,8 @@ module com.example.knk_project_gr10_2024 {
     opens controller.Admin to javafx.fxml;
     exports controller.Admin;
     opens controller.Overall to javafx.fxml;
+    opens controller.User to javafx.fxml;
+    exports controller.User;
 //    opens controller.Supervisor to javafx.fxml;
 //    opens controller.StudentStatistics to javafx.fxml;
 //    opens controller.Student to javafx.fxml;

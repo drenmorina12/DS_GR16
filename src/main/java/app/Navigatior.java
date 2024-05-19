@@ -1,13 +1,5 @@
 package app;
 
-/* KOMENTIM I NAVIGATORIT
-
-Kontrolleri i ribbonit edhe i menus duhet me pas ni pane qe me e mbush masane,
-Navigatior.navigate(pane qe mbushet, edhe pane qe vjen) -> shembulli tek Admini qysh e kum ba
-
-Metodat niher spi fshij amo besoj e ndreqi ni menyr qysh me u en kahmos.
-
-*/
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -29,50 +21,29 @@ import java.io.IOException;
 
 
 interface OverallPages{
-    public static String DASHBOARD = "overall-dashboard.fxml";
+
     public static String ERROR404 = "overall-error404.fxml";
 
     public static final String cssForActiveSection = "-fx-background-color: #A5CEF2; -fx-background-radius:10px;";
     public static final String LOGIN = "overall-login.fxml";
-        public static final String CHANGEPASSWORD = "changePassword.fxml";
-    public static final String HELP_ADMIN = "help-admin.fxml";
-    public static final String HELP_DASHBOARD = "help-dashboard.fxml";
-    public static final String HELP_STUDENT = "help-student.fxml";
-    public static final String HELP_SUPERVISOR = "help-supervisor.fxml";
+    public static final String CHANGEPASSWORD = "changePassword.fxml";
+
 }
 
 interface AdminPages{
-//    public final static String ADMIN_RIBBON = "admin-ribbon.fxml";
 
     public final static String ADMIN_MENU = "admin-menu.fxml";
-
-
-    public final static String ADMIN_STUDENTMENU = "admin-studentMenu.fxml";
-    public final static String ADMIN_STUDENTMENU_ADDSTUDENT = "admin-studentMenu-addStudent.fxml";
-
-    public final static String ADMIN_STUDENTMENU_EDITSTUDENT = "admin-studentMenu-editStudent.fxml";
-    public final static String ADMIN_STUDENTMENU_STATISTICS = "admin-studentsMenu-statistics.fxml";
-    public final static String ADMIN_STUDENTMENU_SHOWANDEDIT = "admin-studentMenu-showAndEditStudent.fxml";
     public final static String ADMIN_PROFILE = "admin-profile.fxml";
-
-    public final static String ADMIN_REGISTRATIONMENU = "admin-registrationPeriodMenu.fxml";
-    public final static String ADMIN_REGISTRATIONMENU_ADDREGISTRATION = "admin-registrationPeriodMenu-addRegistration.fxml";
-    public final static String ADMIN_REGISTRATIONMENU_SHOWANDEDIT = "admin-registrationMenu-showAndEdit.fxml";
     public final static String ADMIN_RESETPASSWORD = "admin-resetPassword.fxml";
 
-    public final static String ADMIN_SUPERVISORMENU = "admin-supervisorMenu.fxml";
-    public final static String ADMIN_SUPERVISORMENU_ADDSUPERVISOR = "admin-supervisorMenu-addSupervisor.fxml";
     public final static String ADMIN_USERMENU_EDITUSER = "admin-studentMenu-showAndEditStudent.fxml";
 
 
 }
 interface UserPages {
     public static final String SIGNUP = "user-signup.fxml";
-    public final static String STUDENT_MENU = "StudentMenu.fxml";
-    public final static String PERSONAL_INFO = "PersonalInfo.fxml";
-    public final static String EDUCATION = "educational-experience.fxml";
-    public final static String ACADEMIC = "academic-interest.fxml";
-    public final static String STUDENT_DASHBOARD = "";
+    public final static String USER_MENU = "user-menu.fxml";
+    public static String USER_PROFILE = "user-profile.fxml";
 }
 
 

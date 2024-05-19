@@ -1,6 +1,9 @@
 package repository;
 
 import model.SupervisorTableModel;
+import model.dto.Admin.ChangePasswordOnDb;
+import model.dto.Admin.ResetPasswordOnDb;
+import model.dto.Overall.CreateUserDto;
 import model.dto.User.UserEditDto;
 import service.DBConnector;
 
@@ -128,7 +131,76 @@ public class UserRepository {
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
-            
+        }
+    }
+
+    public static boolean resetPassword(ResetPasswordOnDb data){
+        Connection connection = DBConnector.getConnection();
+        String query = "UPDATE tblUser SET salt = ?, passwordHash = ? WHERE userId = ?";
+        try {
+            PreparedStatement pst = connection.prepareStatement(query);
+            pst.setString(1, data.getSalt());
+            pst.setString(2, data.getPasswordHash());
+            pst.setInt(3, data.getId());
+            int rowsAffected = pst.executeUpdate();
+            pst.close();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public static boolean create(CreateUserDto userData)throws SQLException {
+        Connection conn = DBConnector.getConnection();
+        String query = """
+                INSERT INTO tblUser (email, emri, mbiemri, salt, passwordHash)
+                VALUE (?, ?, ?, ?, ?)
+                """;
+        try{
+            System.out.println("try");
+            PreparedStatement pst = conn.prepareStatement(query);
+            System.out.println("query");
+            pst.setString(1, userData.getEmail());
+            pst.setString(2, userData.getFirstName());
+            pst.setString(3, userData.getLastName());
+            pst.setString(4, userData.getSalt());
+            pst.setString(5, userData.getPasswordHash());
+            System.out.println("Kati");
+
+
+            pst.execute();
+            System.out.println("Katishtu");
+            pst.close();
+            conn.close();
+            System.out.println("Kati u shtu");
+            return true;
+        }catch (Exception e){
+            System.out.println("Nuk u shtu");
+            return false;
+        }
+
+    }
+
+
+    public static boolean changePassword(ChangePasswordOnDb changeData){
+        String query = "UPDATE tbluser SET passwordHash = ? WHERE email = ?";
+        System.out.println("Supervisor:");
+        System.out.println(changeData.getNewPassword());
+        System.out.println(changeData.getEmail());
+
+        Connection connection = DBConnector.getConnection();
+        try {
+            PreparedStatement pst = connection.prepareStatement(query);
+            pst.setString(1, changeData.getNewPassword());
+            pst.setString(2, changeData.getEmail());
+
+            int rowsAffected = pst.executeUpdate();
+            pst.close();
+            return rowsAffected > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
         }
     }
 

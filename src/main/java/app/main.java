@@ -11,5 +11,8 @@ public class main extends Application {
         Navigatior.navigateNewStage(Navigatior.LOGIN);
 //        Navigatior.navigate(stage, Navigatior.ADMIN_MENU);
 //        Navigatior.navigate(stage, Navigatior.ADMIN_USERMENU_EDITUSER);
+//        Navigatior.navigateNewStage(Navigatior.SIGNUP);
+//        Navigatior.navigate(stage, Navigatior.USER_MENU);
+
     }
 }

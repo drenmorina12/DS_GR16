@@ -1,4 +1,4 @@
-package controller.Admin;
+package controller.User;
 
 import app.Navigatior;
 import javafx.fxml.FXML;
@@ -17,10 +17,10 @@ public class MenuController {
     private Label txtMenuName;
     @FXML
     private Label txtOption1;
-    @FXML
-    private Label txtOption2;
-    @FXML
-    private Label txtOption3;
+//    @FXML
+//    private Label txtOption2;
+//    @FXML
+//    private Label txtOption3;
     @FXML
     private ImageView imgMain;
     @FXML
@@ -49,20 +49,20 @@ public class MenuController {
 
     @FXML
     private void initialize() {
-        this.txtMenuName.setText("Admin");
+        this.txtMenuName.setText("User");
 
-        this.txtOption1.setText("Student Menu");
-        this.txtOption2.setText("Inbox");
-        this.txtOption3.setText("Statistics");
-        this.option1Navigate = Navigatior.ADMIN_USERMENU_EDITUSER;
+        this.txtOption1.setText("Profile");
+//        this.txtOption2.setText("Inbox");
+//        this.txtOption3.setText("Statistics");
+        this.option1Navigate = Navigatior.USER_PROFILE;
 //        this.option2Navigate = Navigatior.SUPERVISOR_INBOX;
 //        this.option3Navigate = Navigatior.SUPERVISOR_STATISTICS;
-        this.option4Navigate = Navigatior.ADMIN_PROFILE;
+//        this.option4Navigate = Navigatior.SUPERVISOR_PROFILE;
         try {
             this.imgMain.setImage(new Image(new FileInputStream("Images/studentMenu.png")));
-            this.imgOption1.setImage(new Image(new FileInputStream("Images/showAndEdit.png")));
-            this.imgOption2.setImage(new Image(new FileInputStream("Images/application.png")));
-            this.imgOption3.setImage(new Image(new FileInputStream("Images/statistics.png")));
+//            this.imgOption1.setImage(new Image(new FileInputStream("Images/showAndEdit.png")));
+//            this.imgOption2.setImage(new Image(new FileInputStream("Images/application.png")));
+//            this.imgOption3.setImage(new Image(new FileInputStream("Images/statistics.png")));
         } catch (FileNotFoundException e) {
             System.out.println("Image not found");
         }

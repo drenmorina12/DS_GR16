@@ -18,6 +18,7 @@ public class SESSION {
     private static String admin_reset_type = "";
 
 
+
     public static Admin getLoggedAdmin() {
         return loggedAdmin;
     }
@@ -56,5 +57,16 @@ public class SESSION {
     }
     public static void setAdmin_reset_type(String admin_reset_type) {
         SESSION.admin_reset_type = admin_reset_type;
+    }
+
+    public static int getAdmin_reset_PasswordId() {
+        return admin_reset_PasswordId;
+    }
+    public static String getAdmin_reset_type() {
+        return admin_reset_type;
+    }
+
+    public static int getUser() {
+        return user;
     }
 }

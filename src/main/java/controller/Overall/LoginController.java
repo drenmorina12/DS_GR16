@@ -54,7 +54,7 @@ public class LoginController {
 
                 Stage stage = new Stage();
                 stage.setMaximized(true);
-                Navigatior.navigate(stage, Navigatior.SIGNUP);
+                Navigatior.navigate(stage, Navigatior.USER_MENU);
                 //Mbikqyresi mu ru ne session
                 SESSION.setLoggedSupervisor(UserRepository.getSupervisorByEmail(this.userEmail.getText()));
                 System.out.println(SESSION.getLoggedSupervisor().getFirstName());
@@ -70,6 +70,12 @@ public class LoginController {
 
         }
 
+    }
+
+    @FXML
+    public void handleSignup(ActionEvent ae) {
+        Navigatior.navigateNewStage(Navigatior.SIGNUP);
+        Navigatior.closeStageAfterDelay(ae, Duration.millis(1));
     }
 
 }
